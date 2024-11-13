@@ -95,7 +95,8 @@
         font-size: 1.2rem;
     }
     .logo img{
-        display: none;
+        height: 50%;
+        margin-right: 2%;
     }
     ul.nav_list{
         width: 40%;
