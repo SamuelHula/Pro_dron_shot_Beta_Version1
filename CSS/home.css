@@ -70,7 +70,7 @@
         left: 0;
         z-index: 1;
 
-        background-color: black;
+        transition: all .5s;
     }
     nav.nav_bar{
         width: 100%;

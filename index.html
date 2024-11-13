@@ -9,8 +9,8 @@
     <meta name="description" content="Poskytujeme unikátne dronové služby, ktoré prispôsobíme vašim požiadavkam a potrebám. Rovnako sme zameraní na presnosť a kvalitu v každom projekte.">
 </head>
 <body>
-    <header>
-        <nav class="nav_bar">
+    <header id="nav_bar">
+        <nav class=".navbar-fixed-top nav_bar">
             <aside class="logo">
                 <img src="" alt="Logo pro dron shot">
                 <h2>PRO DRON SHOT</h2>
@@ -138,6 +138,18 @@
         <aside class="text">
             <p>&copy; 2024 PRO DRON SHOT. Všetky práva vyhradené.</p>
         </aside>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                
+                document.getElementById("nav_bar").style.background = "black";
+            } else {
+            
+                document.getElementById("nav_bar").style.background = "none";
+            }
+            }
+        </script>
     </footer>
 </body>
 </html>
