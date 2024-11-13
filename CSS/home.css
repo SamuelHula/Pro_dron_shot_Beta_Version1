@@ -283,13 +283,6 @@
         justify-content: space-evenly;
         align-items: center;
     }
-    .spolu figure{
-        width: 250px;
-        height: 250px;
-        background-color: gray;
-
-        margin: 5% 0;
-    }
     #spolu h2{
         text-align: center;
         width: 100%;
@@ -299,6 +292,31 @@
         font-family: "bold";
         font-size: 3rem;
     }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 7))}
+    }
+    .slider {
+        background: white;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        margin: auto;
+        overflow:hidden;
+        position: relative;
+        width: 960px;
+        }
+        
+        .slide-track {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: calc(250px * 14);
+        }
+        
+        .slide {
+            height: 100px;
+            width: 250px;
+        }
 }
 @layer cennik{
     #cennik{
