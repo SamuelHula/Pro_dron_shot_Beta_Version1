@@ -1,0 +1,441 @@
+@layer CSS_reset{
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+@layer Variables{
+    @font-face {
+        font-family: "regular";
+        src: url(../fonts/ProximaNova-Regular.otf);
+    }
+    @font-face {
+        font-family: "bold";
+        src: url(../fonts/Proxima.otf);
+    }
+    :root{
+        --primary: "regular";
+        --nadpis: "bold";
+    }
+}
+@layer Nav_Bar{
+    html{
+        scroll-behavior: smooth;
+    }
+    header{
+        width: 100%;
+        height: 10vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        background-color: black;
+    }
+    nav.nav_bar{
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    aside.logo{
+        width: 20%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        font-family: "bold";
+        font-size: 1.2rem;
+    }
+    .logo img{
+        display: none;
+    }
+    ul.nav_list{
+        width: 40%;
+        height: 100%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .nav_list a{
+        font-family: "regular";
+
+        color: white;
+        text-decoration: none;
+    }
+    .nav_list a:hover{
+        border-bottom: solid rgb(0, 49, 134) 2.5px;
+    }
+}
+@layer Landing_page{
+    #landing_page{
+        width: 100%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+
+        overflow: hidden;
+    }
+    .landing_page{
+        width: 80%;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+    .landing_page h1{
+        font-family: "bold";
+        font-size: 6rem;
+        color: white;
+    }
+    .landing_page a{
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 1% 3%;
+        margin-top: 2%;
+
+        background-color: #fff;
+        color: black;
+
+        font-family: "regular";
+        font-size: 1.5rem;
+
+        text-decoration: none;
+
+        transition: all .5s;
+    }
+    .landing_page a:hover{
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+    .landing_page video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+
+        width: 100%;
+    }
+    .landing_page div{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        background-color: rgba(0, 0, 0, 0.616);
+    }
+}
+@layer About_us{
+    #about_us{
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about_us{
+        width: 90%;
+        height: 100%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center ;
+    }
+    .about_us aside{
+        width: 40%;
+    }
+    .about_us h3{
+        font-family: "bold";
+        font-size: 2.5rem;
+
+        margin-bottom: 2%;
+    }
+    .about_us p{
+        font-family: "regular";
+        line-height: 1.5;
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+    .about_us figure{
+        width: 40%;
+        height: 50%;
+
+        border-radius: 15px;
+
+        background-color: gray;
+    }
+}
+@layer Services{
+    #services{
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+    .services{
+        margin-top: 10%;
+        width: 90%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .services h2{
+        width: 100%;
+
+        text-align: center;
+
+        font-family: "bold"; 
+        font-size: 3rem;
+
+        margin-bottom: 5%;
+    }
+    .services figure{
+        height: 250px;
+        width: 250px;
+
+        display: flex;
+        justify-content: center;
+        align-items: end;
+
+        background-color: black;
+
+        border-radius: 20px;
+    }
+    .services figure figcaption{
+        text-align: center;
+        font-family: "regular";
+        margin: 5%;
+        color: white;
+    }
+}
+@layer Spolu{
+    #spolu{
+        width: 100%;
+        margin-top: 10%;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .spolu{
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .spolu figure{
+        width: 250px;
+        height: 250px;
+        background-color: gray;
+
+        margin: 5% 0;
+    }
+    #spolu h2{
+        text-align: center;
+        width: 100%;
+
+        margin-top: 5%;
+
+        font-family: "bold";
+        font-size: 3rem;
+    }
+}
+@layer cennik{
+    #cennik{
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+    .cennik{
+        margin-top: 10%;
+        width: 90%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .cennik h3{
+        text-align: center;
+        
+        width: 100%;
+
+        font-family: "bold";
+        font-size: 3rem;
+    }
+    .cennik p{
+        width: 100%;
+
+        margin-top: 2%;
+
+        font-family: "regular";
+        text-align: center;
+    }
+    .cennik .wrapper{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .cennik .wrapper aside{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin: 2.5%;
+
+        background-color: gray;
+        border-radius: 15px;
+    }
+    .cennik .wrapper aside h4{
+        font-family: "regular";
+        font-size: 2rem;
+        margin-bottom: 30%;
+        margin-top: 20%;
+    }
+    .cennik .wrapper aside strong{
+        font-family: "bold";
+        font-size: 2.2rem;
+        margin-bottom: 20%;
+    }
+    .cennik .wrapper aside p{
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+@layer footer{
+    footer{
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 10%;
+    }
+    footer .wrapper{
+        width: 100%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        background-color: rgb(34, 34, 35);
+    }
+    footer .wrapper aside{
+        width: 30%;
+        height: 250px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    aside.social div.container{
+        width: 60%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    footer .wrapper aside.kontakt{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    footer .wrapper aside.kontakt h3{
+        color: white;
+        font-size: 2rem;
+        font-family: "regular";
+    }
+    footer .wrapper aside.kontakt p{
+        color: white;
+        font-size: 1.2rem;
+        font-family: "regular";
+        line-height: 1.5;
+    }
+    footer .wrapper aside.kontakt strong{
+        font-size: 1.4rem;
+        color: white;
+        font-family: "bold";
+    }
+    footer a{
+        text-decoration: none;
+        color: white;
+    }
+    footer a:hover{
+        text-decoration: underline;
+    }
+    footer aside.text{
+        width: 100%;
+        height: 10vh;
+
+        background-color: black;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer aside.text p{
+        color: white;
+        font-family: "regular";
+    }
+}
