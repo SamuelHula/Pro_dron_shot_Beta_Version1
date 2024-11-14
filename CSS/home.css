@@ -106,14 +106,137 @@
         justify-content: space-evenly;
         align-items: center;
     }
-    .nav_list a{
+    ul.nav_list a{
         font-family: "regular";
 
         color: white;
         text-decoration: none;
     }
-    .nav_list a:hover{
+    ul.nav_list a:hover{
         border-bottom: solid rgb(0, 49, 134) 2.5px;
+    }
+    .burger{
+        display: none;
+    }
+    @media screen and (max-width: 1279px){
+        ul.nav_list{
+            display: none;
+        }
+        nav.nav_bar{
+            justify-content: space-between;
+        }
+        .burger{
+            display: flex;
+            justify-content: end;
+            width: 50%;
+            height: 100%;
+            margin-right: 20px;
+        }
+        .nav_bar aside.logo{
+            width: calc(50% - 40px);
+        }
+        div.hamburger-menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            width: 10%;
+            height: 100%;
+        }
+        div.hamburger-menu input#menu__toggle {
+            opacity: 0;
+        }
+        div.hamburger-menu input#menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+        }
+        div.hamburger-menu input#menu__toggle:checked + .menu__btn > span::before {
+            top: 0;
+        
+            transform: rotate(0deg);
+        }
+        div.hamburger-menu input#menu__toggle:checked + .menu__btn > span::after {
+            top: 0;
+        
+            transform: rotate(90deg);
+        }
+        div.hamburger-menu input#menu__toggle:checked ~ ul.menu__box {
+            right: 0 !important;
+            display: flex;
+        }
+        div.hamburger-menu label.menu__btn {
+            position: absolute;
+            z-index: 1;
+        
+            width: 40px;
+            height: 26px;
+        
+            cursor: pointer;
+        }
+        div.hamburger-menu label.menu__btn > span,
+        div.hamburger-menu label.menu__btn > span::before,
+        div.hamburger-menu label.menu__btn > span::after {
+            display: block;
+        
+            position: absolute;
+        
+            width: 100%;
+            height: 5px;
+        
+            background-color: white;
+        
+            transition-duration: .25s;
+        }
+        div.hamburger-menu label.menu__btn > span::before {
+            content: '';
+            top: -16px;
+        }
+        div.hamburger-menu label.menu__btn > span::after {
+            content: '';
+            top: 16px;
+        }
+        div.hamburger-menu ul.menu__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            display: none;
+        
+            position: absolute;
+            top: 0;
+            right: -100%;
+        
+            width: 300px;
+            height: 100vh;
+        
+            margin: 0;
+                    
+            list-style: none;
+        
+            background-color: black;
+        
+            transition-duration: .25s;
+        }
+        div.hamburger-menu ul.menu__box li{     
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div.hamburger-menu ul.menu__box li:first-child{
+            margin-top: 15%;
+        }
+        div.hamburger-menu ul.menu__box li a{
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 2rem;
+        }
+        .nav_bar aside{
+            width: 30%;
+            margin-left: 20px;
+        }
+        .burger a{
+            text-decoration: none;
+            color: white;
+        }
     }
 }
 @layer Landing_page{
@@ -169,7 +292,7 @@
         left: 0;
         z-index: -2;
 
-        width: 100%;
+        height: 120%;
     }
     .landing_page div{
         width: 100%;
@@ -181,6 +304,11 @@
         z-index: -1;
 
         background-color: rgba(0, 0, 0, 0.616);
+    }
+    @media screen and (max-width: 391px){
+        .landing_page h1{
+            font-size: 4rem;
+        }
     }
 }
 @layer About_us{
@@ -222,6 +350,21 @@
         border-radius: 15px;
 
         background-color: gray;
+    }
+    @media screen and (max-width: 946px){
+        article.about_us{
+            flex-direction: column;
+        }
+        .about_us aside{
+            width: 90%;
+            text-align-last: center;
+        }
+        .about_us figure{
+            width: 90%;
+        }
+        .about_us aside h3{
+            text-align: center;
+        }
     }
 }
 @layer Services{
@@ -267,6 +410,16 @@
         font-family: "regular";
         margin: 5%;
         color: white;
+    }
+    @media screen and (max-width: 946px) {
+        .services figure{
+            width: 90%;
+            height: 500px;
+            margin-bottom: 2%;
+        }
+        .services h2{
+            font-size: 1.5rem;
+        }
     }
 }
 @layer Spolu{
@@ -317,6 +470,11 @@
         .slide {
             height: 100px;
             width: 250px;
+        }
+        @media screen and (max-width: 391px){
+            #spolu h2{
+                font-size: 1.5rem;
+            }
         }
 }
 @layer cennik{
@@ -381,6 +539,14 @@
     .cennik .wrapper aside p{
         margin-top: 10%;
         margin-bottom: 10%;
+    }
+    @media screen and (max-width: 914px){
+        .cennik .wrapper aside{
+            width: 40%;
+        }
+        .cennik h3{
+            font-size: 1.5rem;
+        }
     }
 }
 @layer footer{
@@ -456,5 +622,23 @@
     footer aside.text p{
         color: white;
         font-family: "regular";
+    }
+    @media screen and (max-width: 847px){
+        footer .wrapper{
+            flex-direction: column;
+        }
+        footer .wrapper aside {
+            width: 90%;
+            display: flex;
+            align-items: center;
+        }
+        footer .wrapper aside.kontakt{
+            width: 90%;
+        }
+        footer .wrapper aside.kontakt h3,
+        footer .wrapper aside.kontakt p{
+            text-align: center;
+            width: 100%;
+        }
     }
 }
